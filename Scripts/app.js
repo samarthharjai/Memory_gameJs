@@ -3,52 +3,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // Array of cards
     const cardArray = [
         {
-            name: 'cheeseburger',
-            img: 'images/cheeseburger.png',
+            name: 'nasa',
+            img: 'images/nasa.png',
         },
         {
-            name: 'cheeseburger',
-            img: 'images/cheeseburger.png'
+            name: 'nasa',
+            img: 'images/nasa.png'
         },
         {
-            name: 'fries',
-            img: 'images/fries.png'
+            name: 'pepsi',
+            img: 'images/pepsi.png'
         },
         {
-            name: 'fries',
-            img: 'images/fries.png'
+            name: 'pepsi',
+            img: 'images/pepsi.png'
         },
         {
-            name: 'hotdog',
-            img: 'images/hotdog.png'
+            name: 'starbucks',
+            img: 'images/starbucks.png'
         },
         {
-            name: 'hotdog',
-            img: 'images/hotdog.png'
+            name: 'starbucks',
+            img: 'images/starbucks.png'
         },
         {
-            name: 'ice-cream',
-            img: 'images/ice-cream.png'
+            name: 'facebook',
+            img: 'images/facebook.png'
         },
         {
-            name: 'ice-cream',
-            img: 'images/ice-cream.png'
+            name: 'facebook',
+            img: 'images/facebook.png'
         },
         {
-            name: 'milkshake',
-            img: 'images/milkshake.png'
+            name: 'burgerking',
+            img: 'images/burgerking.png'
         },
         {
-            name: 'milkshake',
-            img: 'images/milkshake.png'
+            name: 'burgerking',
+            img: 'images/burgerking.png'
         },
         {
-            name: 'pizza',
-            img: 'images/pizza.png'
+            name: 'xbox',
+            img: 'images/xbox.png'
         },
         {
-            name: 'pizza',
-            img: 'images/pizza.png'
+            name: 'xbox',
+            img: 'images/xbox.png'
         },
     ]
     
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
       var card = document.createElement('img')
-      card.setAttribute('src', 'images/blank.png')
+      card.setAttribute('src', 'images/back.png')
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
       grid.appendChild(card)
@@ -78,27 +78,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionTwoId = cardsChosenId[1]
     
     if(optionOneId == optionTwoId) {
-      cards[optionOneId].setAttribute('src', 'images/blank.png')
-      cards[optionTwoId].setAttribute('src', 'images/blank.png')
-      alert('You have clicked the same image!')
+      cards[optionOneId].setAttribute('src', 'images/back.png')
+      cards[optionTwoId].setAttribute('src', 'images/back.png')
+      alert(`Stop clicking on the same image`)
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
-      alert('You found a match')
+      alert(`Nice Job Now Do it Again`)
       cards[optionOneId].setAttribute('src', 'images/white.png')
       cards[optionTwoId].setAttribute('src', 'images/white.png')
       cards[optionOneId].removeEventListener('click', flipCard)
       cards[optionTwoId].removeEventListener('click', flipCard)
       cardsWon.push(cardsChosen)
     } else {
-      cards[optionOneId].setAttribute('src', 'images/blank.png')
-      cards[optionTwoId].setAttribute('src', 'images/blank.png')
-      alert('Sorry, try again')
+      cards[optionOneId].setAttribute('src', 'images/back.png')
+      cards[optionTwoId].setAttribute('src', 'images/back.png')
+      alert(`try again! Dont Fail`)
     }
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
     if  (cardsWon.length === cardArray.length/2) {
-      resultDisplay.textContent = 'Congratulations! You found them all!'
+      resultDisplay.textContent = 'Congratulations! You Won'
     }
   }
 
